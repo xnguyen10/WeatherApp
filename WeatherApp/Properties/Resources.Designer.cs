@@ -63,6 +63,16 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10d {
+            get {
+                object obj = ResourceManager.GetObject("_10d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap moon1 {
             get {
                 object obj = ResourceManager.GetObject("moon1", resourceCulture);

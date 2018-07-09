@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -56,8 +57,8 @@ namespace WeatherApp
                     lblHigh.Text = string.Format("{0:0}\u00B0 " + "F", outPut.main.temp_max);
                     lblLow.Text = string.Format("{0:0}\u00B0 " + "F", outPut.main.temp_min);
 
-                    string URL = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/8f342f30971807.563b2b138deaa.gif";
-                    picWeather1.Load(URL);
+                    //string URL = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/8f342f30971807.563b2b138deaa.gif";
+                    //picWeather1.Load(URL);
 
                     picSunrise.Load("http://openweathermap.org/img/w/01d.png");
                     picSunset.Load("http://openweathermap.org/img/w/01n.png");
@@ -129,12 +130,11 @@ namespace WeatherApp
                     lblDescription1.Text = string.Format("{0}", forecast.list[0].weather[0].description);
                     lblHumidity1.Text = string.Format("{0} %", forecast.list[0].humidity);
                     lblWindSpeed1.Text = string.Format("{0} m/h", forecast.list[0].speed);
-                    picWeather1.Load("http://openweathermap.org/img/w/" + icon0 + ".png");
-
+                    picWeather1.Load(@"Resources\Images\" + icon0 + ".gif");                           
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
